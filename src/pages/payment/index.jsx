@@ -33,12 +33,8 @@ const Payment = () => {
       </div>
 
       {tab === "shopping-cart" && <ShoppingCart tab={tab} setTab={setTab} />}
-      {tab === "shipping-details" && (
-        <ShippingDetails tab={tab} setTab={setTab} />
-      )}
-      {tab === "payment-details" && (
-        <PaymentDetails tab={tab} setTab={setTab} />
-      )}
+      {tab === "shipping-details" && <ShippingDetails setTab={setTab} />}
+      {tab === "payment-details" && <PaymentDetails setTab={setTab} />}
     </motion.div>
   );
 };

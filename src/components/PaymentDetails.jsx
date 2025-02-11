@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { LockIcon } from "../assets/icons";
 import metamask from "../assets/images/MetaMask.png";
 import coinbase from "../assets/images/Coinbase.png";
@@ -8,12 +8,14 @@ import { motion } from "framer-motion";
 import CartDetails from "./CartDetails";
 import { useNavigate } from "react-router";
 import BeatLoader from "react-spinners/BeatLoader";
+import CartContext from "../CartContext";
 
 const PaymentDetails = ({ setTab }) => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState("#ffffff");
+  const { clearCart } = useContext(CartContext);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -138,6 +140,7 @@ const PaymentDetails = ({ setTab }) => {
             setLoading(true);
             setTimeout(() => {
               setLoading(false);
+              clearCart();
               navigate("/success");
             }, 2000);
           }}
