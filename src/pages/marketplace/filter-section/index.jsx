@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import {
-  AngleDownIcon,
-  FilterBorderSvg,
-  FilterIcon,
-} from "../../../assets/icons";
+import { AngleDownIcon, FilterBorderSvg } from "../../../assets/icons";
+import { MdFilterList } from "react-icons/md";
 
 const FilterSection = ({ handlePriceFilter }) => {
   const infinity = 1.797693134862315e308 * 1.001;
@@ -66,7 +63,7 @@ const FilterSection = ({ handlePriceFilter }) => {
   return (
     <div>
       <div className="flex items-center gap-2">
-        <FilterIcon />
+        <MdFilterList size={30} color="#333333" />
         <p className="font-Satoshi text-2xl font-medium text-[#333333]">
           Filter
         </p>

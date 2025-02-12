@@ -11,36 +11,7 @@ import { motion } from "framer-motion";
 const UpcomingAuctions = () => {
   const navigate = useNavigate();
 
-  const [upcomingAuctions, setUpcomingAuctions] = useState([
-    {
-      id: "c1",
-      url: "https://images.unsplash.com/photo-1665854598270-d4a12f9e95b2?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8YWxsfDY5fHx8fHx8Mnx8MTY2NTk1NDAzMA&ixlib=rb-1.2.1&q=80&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450",
-      title: "ALTE REDEFINED.",
-      date: "Starts : 08:00 GTS . Monday ",
-      desc: "GET EXCLUSIVE VIEWING OF CONTEMPORARY ART AND CONNECT WITH INVESTORS AND AUCTIONEERS ACROSS THE WORLD BRINGING THEIR HIGHEST AND LOWEST BIDS.",
-    },
-    {
-      id: "c2",
-      url: "https://images.unsplash.com/photo-1665808044552-102b98dbdda6?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8YWxsfDgwfHx8fHx8Mnx8MTY2NTk1NDAzMA&ixlib=rb-1.2.1&q=80&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450",
-      title: "AUTUMN LEAF",
-      date: "Starts : 10:45 GTS . Wednesday ",
-      desc: "The artwork captures the beauty of a single autumn leaf. The leaf is a vibrant orange, with hints of red and yellow along its edges. The use of light and shadow adds depth and dimension to the piece.",
-    },
-    {
-      id: "c3",
-      url: "https://images.unsplash.com/photo-1665873845039-addf16e6e180?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8YWxsfDk0fHx8fHx8Mnx8MTY2NjAwMjkwMw&ixlib=rb-1.2.1&q=80&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450",
-      title: "YOUNG IRISH MODEL.",
-      date: "Starts : 09:00 GTS . Thursday ",
-      desc: "The artwork features a pale model, standing against a dark and moody background. The model's porcelain skin is the focus of the piece, contrasting sharply with the shadowy surroundings.",
-    },
-    {
-      id: "c4",
-      url: "https://images.unsplash.com/photo-1665677602807-39836757ce89?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8YWxsfDI1N3x8fHx8fDJ8fDE2NjU5NTQ3MDI&ixlib=rb-1.2.1&q=80&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450",
-      title: "BABY KANGAROO.",
-      date: "Starts : 12:00 GTS . Saturday ",
-      desc: "The artwork features a cute and cuddly baby kangaroo. The baby's soft, fluffy fur is captured in great detail, with its adorable face and curious eyes drawing the viewer in.",
-    },
-  ]);
+  const [upcomingAuctions, setUpcomingAuctions] = useState([]);
   const [index, setIndex] = useState(0);
   const [carouselProgressBar, setCarouselProgressBar] = useState(50);
 
@@ -81,7 +52,7 @@ const UpcomingAuctions = () => {
         <LongRightArrowSvg />
       </div>
 
-      {upcomingAuctions && (
+      {upcomingAuctions.length > 0 && (
         <motion.div
           // initial={{ y: 20 }}
           // animate={{ y: 0 }}
@@ -145,16 +116,16 @@ const UpcomingAuctions = () => {
             <div className="h-full w-[50px] bg-white"></div>
           )}
         </div>
-        <div className="flex w-full justify-end gap-4">
+        <div className="flex w-full justify-end gap-2 lg:gap-4">
           <button
             onClick={handlePrevious}
-            className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#FFFFFF33] shadow shadow-[#00000026]"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF33] shadow shadow-[#00000026] lg:h-[60px] lg:w-[60px]"
           >
             <AngleLeftSvg />
           </button>
           <button
             onClick={handleNext}
-            className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#FFFFFF33] shadow shadow-[#00000026]"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF33] shadow shadow-[#00000026] lg:h-[60px] lg:w-[60px]"
           >
             <AngleRightSvg />
           </button>

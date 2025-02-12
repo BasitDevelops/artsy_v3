@@ -86,15 +86,15 @@ const NavBar = () => {
         ))}
       </div>
       <div className="flex items-center gap-2">
-        <button>
+        {/* <button>
           <SearchIcon />
-        </button>
+        </button> */}
         <button onClick={() => navigate("/cart")}>
           <CartIcon circle={cartItems.length > 0} />
         </button>
-        <button className="hidden lg:flex">
+        {/* <button className="hidden lg:flex">
           <BellIcon />
-        </button>
+        </button> */}
       </div>
     </nav>
   );

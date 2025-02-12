@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import {
   AngleDownIcon,
-  RightArrowIcon,
+  ArrowForwardCircleIcon,
   SmallRightArrow,
 } from "../assets/icons";
 import { useLocation, useNavigate } from "react-router";
@@ -52,7 +52,7 @@ const ProductDetails = () => {
     >
       <div className="flex items-center gap-4">
         <button onClick={() => navigate("/marketplace")} className="rotate-180">
-          <RightArrowIcon />
+          <ArrowForwardCircleIcon />
         </button>
         <p className="font-Satoshi text-xs font-medium text-[#BCB7B7] md:text-base">
           Marketplace /{" "}

@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/images/logo.svg";
 import { Link } from "react-router";
-import { LocationIcon, MailIcon } from "../../assets/icons";
+import { MdOutlineLocationOn, MdMailOutline } from "react-icons/md";
 
 const Footer = () => {
   const links = [
@@ -60,13 +60,17 @@ const Footer = () => {
             Reach Us
           </p>
           <div className="flex items-center gap-2">
-            <MailIcon />
+            <div className="text-3xl lg:text-5xl">
+              <MdMailOutline />
+            </div>
             <p className="font-Satoshi text-xs text-[#333333] lg:text-xl">
               artsystudios@gmail.com
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <LocationIcon />
+            <div className="text-3xl lg:text-5xl">
+              <MdOutlineLocationOn />
+            </div>
             <p className="font-Satoshi text-xs text-[#333333] lg:text-xl">
               Lagos, Nigeria.
             </p>

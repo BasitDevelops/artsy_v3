@@ -97,14 +97,14 @@ const MarketPlace = () => {
                     ))}
             </div>
           )}
-          {/* <div className="mx-auto mt-8">
+          <div className="mx-auto mt-8">
             {marketPlaceProducts.length < 1 && (
               <p className="text-xl">No results found...</p>
             )}
-            {searchValue && searchedProducts.length < 1 && (
+            {/* {searchValue && searchedProducts.length < 1 && (
               <p className="mx-auto mt-8 text-xl">No results found...</p>
-            )}
-          </div> */}
+            )} */}
+          </div>
         </div>
         {!searchValue && (
           <button className="mx-auto mt-8 h-[50px] w-[150px] rounded-lg border border-black font-Satoshi text-lg text-black duration-300 hover:bg-black hover:text-white lg:mt-16 lg:h-[60px] lg:w-[200px] lg:text-2xl lg:font-medium">

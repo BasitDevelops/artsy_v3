@@ -5,7 +5,7 @@ import ell16 from "../../../assets/images/Ellipse 16.png";
 import ell17 from "../../../assets/images/Ellipse 17.png";
 import ell18 from "../../../assets/images/Ellipse 18.png";
 import { useNavigate } from "react-router";
-import { RightArrowIcon } from "../../../assets/icons";
+import { ArrowForwardCircleIcon } from "../../../assets/icons";
 
 const FeaturedProducts = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
 
   useEffect(() => {
     fetch(
-      "https://gist.githubusercontent.com/BasitDevelops/9e0020bc5bfb444d6fed4ca84595c146/raw/fa83e60319a4dc9a4306d86ff65d24ba565237a3/products.json",
+      "https://gist.githubusercontent.com/BasitDevelops/9e0020bc5bfb444d6fed4ca84595c146/raw/fa83e60319a4dc9a4306d86ff65d24ba565237a3/products.json"
     )
       .then((response) => response.json())
       .then((data) => setFeaturedProducts(data.featured_products));
@@ -42,7 +42,7 @@ const FeaturedProducts = () => {
               <h3 className="font-ClashDisplay text-xl font-semibold text-[#ffffff]">
                 {window.screen.width < 1024 ? product.title : "View Product"}
               </h3>
-              <RightArrowIcon stroke="#ffffff" fill="#ffffff" />
+              <ArrowForwardCircleIcon stroke="#ffffff" fill="#ffffff" />
             </div>
           </div>
 
@@ -83,7 +83,7 @@ const FeaturedProducts = () => {
                 onClick={() => navigate("/marketplace")}
                 className="hidden lg:flex"
               >
-                <RightArrowIcon />
+                <ArrowForwardCircleIcon />
               </button>
             </div>
           </div>

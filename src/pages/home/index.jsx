@@ -1,7 +1,7 @@
 import React from "react";
 import FeaturedProducts from "./featured-products";
 import UpcomingAuctions from "./upcoming-auctions";
-import { RightArrowIcon } from "../../assets/icons";
+import { ArrowForwardCircleIcon } from "../../assets/icons";
 import TopCreators from "./top-creators";
 import NewsLetter from "../../components/common/NewsLetter";
 import Footer from "../../components/common/Footer";
@@ -39,7 +39,7 @@ const Home = () => {
             Explore marketplace
           </p>
           <button onClick={() => navigate("/marketplace")}>
-            <RightArrowIcon />
+            <ArrowForwardCircleIcon />
           </button>
         </div>
         <div className="flex items-center justify-between border-y-[0.5px] border-[#292929] p-4 lg:border-[#333333] lg:px-16 lg:py-8">
@@ -47,7 +47,7 @@ const Home = () => {
             See auctions
           </p>
           <button onClick={() => navigate("/auctions")}>
-            <RightArrowIcon />
+            <ArrowForwardCircleIcon />
           </button>
         </div>
       </section>
