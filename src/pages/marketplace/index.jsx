@@ -7,6 +7,7 @@ import Footer from "../../components/common/Footer";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import BeatLoader from "react-spinners/BeatLoader";
+import { Modal } from "flowbite-react";
 
 const MarketPlace = () => {
   const [marketPlaceProducts, setMarketPlaceProducts] = useState([]);
@@ -16,6 +17,7 @@ const MarketPlace = () => {
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState("#ffffff");
   const [button, setButton] = useState(true);
+  const [displayFilter, setDisplayFilter] = useState(false);
 
   const fetchProducts = async () => {
     const data = await fetch(
@@ -67,10 +69,22 @@ const MarketPlace = () => {
               See 1-{marketPlaceProducts.length} of {marketPlaceProducts.length}{" "}
               results
             </p>
-            <button className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={() => setDisplayFilter(true)}
+              className="flex items-center gap-2 lg:hidden"
+            >
               <p className="font-Satoshi text-base text-black">Sort by</p>
               <AngleDownIcon />
             </button>
+            <Modal show={displayFilter} onClose={() => setDisplayFilter(false)}>
+              <Modal.Header>Sort by</Modal.Header>
+              <Modal.Body>
+                <FilterSection
+                  handlePriceFilter={handlePriceFilter}
+                  setFilterValue={setFilterValue}
+                />
+              </Modal.Body>
+            </Modal>
           </div>
         </div>
         <div className="flex lg:gap-8">
