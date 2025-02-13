@@ -119,13 +119,13 @@ const UpcomingAuctions = () => {
         <div className="flex w-full justify-end gap-2 lg:gap-4">
           <button
             onClick={handlePrevious}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF33] shadow shadow-[#00000026] lg:h-[60px] lg:w-[60px]"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FFFFFF33] shadow shadow-[#00000026] hover:shadow-lg lg:h-14 lg:w-14"
           >
             <AngleLeftSvg />
           </button>
           <button
             onClick={handleNext}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF33] shadow shadow-[#00000026] lg:h-[60px] lg:w-[60px]"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FFFFFF33] shadow shadow-[#00000026] hover:shadow-lg lg:h-14 lg:w-14"
           >
             <AngleRightSvg />
           </button>

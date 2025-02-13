@@ -5,7 +5,7 @@ import ell16 from "../../../assets/images/Ellipse 16.png";
 import ell17 from "../../../assets/images/Ellipse 17.png";
 import ell18 from "../../../assets/images/Ellipse 18.png";
 import { useNavigate } from "react-router";
-import { ArrowForwardCircleIcon } from "../../../assets/icons";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const FeaturedProducts = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
 
   useEffect(() => {
     fetch(
-      "https://gist.githubusercontent.com/BasitDevelops/9e0020bc5bfb444d6fed4ca84595c146/raw/fa83e60319a4dc9a4306d86ff65d24ba565237a3/products.json"
+      "https://gist.githubusercontent.com/BasitDevelops/9e0020bc5bfb444d6fed4ca84595c146/raw/fa83e60319a4dc9a4306d86ff65d24ba565237a3/products.json",
     )
       .then((response) => response.json())
       .then((data) => setFeaturedProducts(data.featured_products));
@@ -37,12 +37,14 @@ const FeaturedProducts = () => {
             />
             <div
               onClick={() => navigate("/marketplace")}
-              className="absolute left-0 top-0 flex h-full w-full cursor-pointer items-center justify-center gap-4 bg-[#00000099] p-4 duration-500 group-hover:opacity-100 lg:opacity-0"
+              className="absolute left-0 top-0 flex h-full w-full cursor-pointer items-center justify-center gap-2 bg-[#00000099] p-4 duration-500 group-hover:opacity-100 lg:gap-4 lg:opacity-0"
             >
               <h3 className="font-ClashDisplay text-xl font-semibold text-[#ffffff]">
                 {window.screen.width < 1024 ? product.title : "View Product"}
               </h3>
-              <ArrowForwardCircleIcon stroke="#ffffff" fill="#ffffff" />
+              <div className="text-4xl text-white lg:text-6xl">
+                <IoArrowForwardCircleOutline />
+              </div>
             </div>
           </div>
 
@@ -81,9 +83,9 @@ const FeaturedProducts = () => {
               </div>
               <button
                 onClick={() => navigate("/marketplace")}
-                className="hidden lg:flex"
+                className="hidden text-6xl lg:flex"
               >
-                <ArrowForwardCircleIcon />
+                <IoArrowForwardCircleOutline />
               </button>
             </div>
           </div>

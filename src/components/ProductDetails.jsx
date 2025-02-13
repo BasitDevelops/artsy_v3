@@ -1,14 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  AngleDownIcon,
-  ArrowForwardCircleIcon,
-  SmallRightArrow,
-} from "../assets/icons";
+import { AngleDownIcon, SmallRightArrow } from "../assets/icons";
 import { useLocation, useNavigate } from "react-router";
 import SuggestedProductCard from "./SuggestedProductCard";
 import CartContext from "../CartContext";
 import { motion } from "framer-motion";
 import BeatLoader from "react-spinners/BeatLoader";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const ProductDetails = () => {
   const location = useLocation();
@@ -50,9 +47,12 @@ const ProductDetails = () => {
       transition={{ duration: 0.5 }}
       className="flex flex-col gap-8 px-4 pb-16 lg:px-16"
     >
-      <div className="flex items-center gap-4">
-        <button onClick={() => navigate("/marketplace")} className="rotate-180">
-          <ArrowForwardCircleIcon />
+      <div className="flex items-center gap-2 lg:gap-4">
+        <button
+          onClick={() => navigate("/marketplace")}
+          className="rotate-180 text-4xl lg:text-6xl"
+        >
+          <IoArrowForwardCircleOutline />
         </button>
         <p className="font-Satoshi text-xs font-medium text-[#BCB7B7] md:text-base">
           Marketplace /{" "}

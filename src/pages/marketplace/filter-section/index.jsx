@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AngleDownIcon, FilterBorderSvg } from "../../../assets/icons";
 import { MdFilterList } from "react-icons/md";
 
-const FilterSection = ({ handlePriceFilter }) => {
+const FilterSection = ({ handlePriceFilter, setFilterValue }) => {
   const infinity = 1.797693134862315e308 * 1.001;
 
   const categories = [
@@ -120,9 +120,10 @@ const FilterSection = ({ handlePriceFilter }) => {
           {priceRanges.map((priceRange) => (
             <li key={priceRange.label}>
               <button
-                onClick={(e) => {
+                onClick={() => {
                   handlePriceFilter(priceRange.min, priceRange.max);
                   setPriceRangeValue(priceRange.label);
+                  setFilterValue(priceRange.label);
                 }}
                 className={`${priceRange.label === priceRangeValue && "border-b-2 border-[#292929]"} h-[30px] w-fit font-Satoshi text-[#292929]`}
               >

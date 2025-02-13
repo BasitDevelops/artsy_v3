@@ -1,13 +1,13 @@
 import React from "react";
 import FeaturedProducts from "./featured-products";
 import UpcomingAuctions from "./upcoming-auctions";
-import { ArrowForwardCircleIcon } from "../../assets/icons";
 import TopCreators from "./top-creators";
 import NewsLetter from "../../components/common/NewsLetter";
 import Footer from "../../components/common/Footer";
 import { useNavigate } from "react-router";
 import Animation from "../../components/Animation";
 import { motion } from "framer-motion";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,16 +38,22 @@ const Home = () => {
           <p className="font-Satoshi text-lg font-medium text-[#292929] lg:text-3xl lg:text-[#333333]">
             Explore marketplace
           </p>
-          <button onClick={() => navigate("/marketplace")}>
-            <ArrowForwardCircleIcon />
+          <button
+            onClick={() => navigate("/marketplace")}
+            className="text-4xl lg:text-6xl"
+          >
+            <IoArrowForwardCircleOutline />
           </button>
         </div>
         <div className="flex items-center justify-between border-y-[0.5px] border-[#292929] p-4 lg:border-[#333333] lg:px-16 lg:py-8">
           <p className="font-Satoshi text-lg font-medium text-[#292929] lg:text-3xl lg:text-[#333333]">
             See auctions
           </p>
-          <button onClick={() => navigate("/auctions")}>
-            <ArrowForwardCircleIcon />
+          <button
+            onClick={() => navigate("/auctions")}
+            className="text-4xl lg:text-6xl"
+          >
+            <IoArrowForwardCircleOutline />
           </button>
         </div>
       </section>

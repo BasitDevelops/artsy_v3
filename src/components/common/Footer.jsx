@@ -60,7 +60,7 @@ const Footer = () => {
             Reach Us
           </p>
           <div className="flex items-center gap-2">
-            <div className="text-3xl lg:text-5xl">
+            <div className="text-4xl lg:text-6xl">
               <MdMailOutline />
             </div>
             <p className="font-Satoshi text-xs text-[#333333] lg:text-xl">
@@ -68,7 +68,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <div className="text-3xl lg:text-5xl">
+            <div className="text-4xl lg:text-6xl">
               <MdOutlineLocationOn />
             </div>
             <p className="font-Satoshi text-xs text-[#333333] lg:text-xl">

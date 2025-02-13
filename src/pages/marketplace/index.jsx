@@ -6,11 +6,16 @@ import NewsLetter from "../../components/common/NewsLetter";
 import Footer from "../../components/common/Footer";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import BeatLoader from "react-spinners/BeatLoader";
 
 const MarketPlace = () => {
   const [marketPlaceProducts, setMarketPlaceProducts] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [filterValue, setFilterValue] = useState("");
   const [searchedProducts, setSearchedProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [color, setColor] = useState("#ffffff");
+  const [button, setButton] = useState(true);
 
   const fetchProducts = async () => {
     const data = await fetch(
@@ -68,9 +73,12 @@ const MarketPlace = () => {
             </button>
           </div>
         </div>
-        <div className="flex gap-8">
+        <div className="flex lg:gap-8">
           <div className="hidden w-[20%] lg:flex">
-            <FilterSection handlePriceFilter={handlePriceFilter} />
+            <FilterSection
+              handlePriceFilter={handlePriceFilter}
+              setFilterValue={setFilterValue}
+            />
           </div>
           {marketPlaceProducts.length > 0 && (
             <div className="grid w-full grid-cols-1 justify-items-center gap-y-8 md:grid-cols-3 lg:w-[80%]">
@@ -106,10 +114,35 @@ const MarketPlace = () => {
             )} */}
           </div>
         </div>
-        {!searchValue && (
-          <button className="mx-auto mt-8 h-[50px] w-[150px] rounded-lg border border-black font-Satoshi text-lg text-black duration-300 hover:bg-black hover:text-white lg:mt-16 lg:h-[60px] lg:w-[200px] lg:text-2xl lg:font-medium">
-            See more
-          </button>
+        {filterValue === "All" ||
+          (!filterValue && button && (
+            <button
+              onClick={() => {
+                setLoading(true);
+                setTimeout(() => {
+                  setButton(false);
+                  setLoading(false);
+                }, 1000);
+              }}
+              className="mx-auto h-[50px] w-[150px] rounded-lg border border-black font-Satoshi text-lg text-black duration-300 hover:bg-black hover:text-white lg:mt-16 lg:h-[60px] lg:w-[200px] lg:text-2xl lg:font-medium"
+            >
+              {!loading ? (
+                "See more"
+              ) : (
+                <BeatLoader
+                  color={color}
+                  loading={loading}
+                  size={10}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+              )}
+            </button>
+          ))}
+        {!button && (
+          <p className="mx-auto h-[50px] text-center font-Satoshi lg:mt-16 lg:h-[60px] lg:text-xl lg:font-medium">
+            "That's all for now, more artworks coming soon..."
+          </p>
         )}
       </div>
       <NewsLetter />
