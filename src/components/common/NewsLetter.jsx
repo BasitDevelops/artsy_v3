@@ -14,9 +14,9 @@ const NewsLetter = () => {
           <input
             type="text"
             placeholder="Enter your Email"
-            className="h-10 border border-[#333333] px-4 font-Baskervville text-xs uppercase text-[#333333] sm:w-[446px] lg:h-14 lg:text-base"
+            className="h-10 border border-[#333333] px-4 font-Baskervville uppercase text-[#333333] sm:w-[446px] lg:h-[50px]"
           />
-          <button className="h-10 w-[180px] border border-[#333333] bg-[#272727] font-Baskervville text-xs uppercase text-white lg:h-14 lg:text-base">
+          <button className="h-[50px] w-[180px] border border-[#333333] bg-[#272727] font-Baskervville uppercase text-white lg:h-[65px]">
             Subscribe
           </button>
         </div>

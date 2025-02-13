@@ -5,12 +5,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
-  @font-face {
-    font-family: "Satoshi";
-    src: url("./assets//fonts/Satoshi-Regular.otf") format("otf");
-  }
-  @font-face {
-    font-family: "ClashDisplay";
-    src: url("./assets/fonts/ClashDisplay-Regular.otf") format("otf");
-  }
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("./assets//fonts/Satoshi-Regular.otf") format("otf");
+}
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("./assets/fonts/ClashDisplay-Regular.otf") format("otf");
+}

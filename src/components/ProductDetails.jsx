@@ -6,6 +6,8 @@ import CartContext from "../CartContext";
 import { motion } from "framer-motion";
 import BeatLoader from "react-spinners/BeatLoader";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
+import { Toast, Modal } from "flowbite-react";
+import { HiCheck } from "react-icons/hi";
 
 const ProductDetails = () => {
   const location = useLocation();
@@ -17,6 +19,10 @@ const ProductDetails = () => {
   const [count, setCount] = useState(1);
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState("#ffffff");
+  const [alert, setAlert] = useState(false);
+  const [displayDescription, setDisplayDescription] = useState(false);
+  const [displayListings, setDisplayListings] = useState(false);
+  const [displayStatus, setDisplayStatus] = useState(false);
 
   const decreaseCount = () => {
     if (count === 1) {
@@ -29,6 +35,18 @@ const ProductDetails = () => {
   const increaseCount = () => setCount((prevState) => prevState + 1);
 
   const { addToCart } = useContext(CartContext);
+
+  const handleAddToCart = async () => {
+    setLoading((prev) => !prev);
+    setTimeout(() => {
+      setLoading((prev) => !prev);
+      addToCart({ productDetails, count: count });
+      setAlert((prev) => !prev);
+    }, 1000);
+    setTimeout(() => {
+      setAlert((prev) => !prev);
+    }, 3000);
+  };
 
   useEffect(() => {
     fetch(
@@ -97,13 +115,7 @@ const ProductDetails = () => {
               <button onClick={increaseCount}>+</button>
             </div>
             <button
-              onClick={() => {
-                setLoading(true);
-                setTimeout(() => {
-                  setLoading(false);
-                  addToCart({ productDetails, count: count });
-                }, 1000);
-              }}
+              onClick={handleAddToCart}
               disabled={loading}
               className="mb-4 flex h-[50px] w-[150px] items-center justify-center gap-2 rounded-sm bg-[#272727] text-[#FFFFFF] duration-300 hover:gap-4 lg:mb-0 lg:h-[60px] lg:w-[200px] lg:text-xl"
             >
@@ -122,45 +134,89 @@ const ProductDetails = () => {
                 />
               )}
             </button>
+            {alert && (
+              <div className="fixed right-4 top-4 lg:right-16 lg:top-8">
+                <Toast>
+                  <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200">
+                    <HiCheck className="h-5 w-5" />
+                  </div>
+                  <div className="ml-3 text-sm font-normal">
+                    Item added to cart successfully.
+                  </div>
+                  <Toast.Toggle />
+                </Toast>
+              </div>
+            )}
           </div>
+
           <div className="flex flex-col border-b border-[#333333] lg:border-x lg:px-4">
-            <div className="flex items-center justify-between py-4 lg:h-[112px] lg:py-0">
+            <button
+              onClick={() => setDisplayDescription(true)}
+              className="flex items-center justify-between py-4 lg:h-[112px] lg:py-0"
+            >
               <p className="font-Satoshi font-medium lg:text-2xl">
                 Description
               </p>
               <AngleDownIcon />
-            </div>
-
-            <div className="hidden pb-4 font-Satoshi text-black">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              tenetur maiores repellat, aliquid necessitatibus corrupti
-              consectetur libero quae dolores aspernatur perferendis, officia,
-              exercitationem a vitae. Quisquam hic animi eius qui! Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Nobis tenetur maiores
-              repellat, aliquid necessitatibus corrupti consectetur libero quae
-              dolores aspernatur perferendis, officia, exercitationem a vitae.
-              Quisquam hic animi eius qui!
-            </div>
+            </button>
+            <Modal
+              show={displayDescription}
+              onClose={() => setDisplayDescription(false)}
+            >
+              <Modal.Header>Description</Modal.Header>
+              <Modal.Body>
+                <div>
+                  <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Placeat, officiis. Atque fugit sint suscipit nesciunt
+                    molestias obcaecati enim, assumenda delectus hic quae et.
+                    Corrupti, impedit! Eum tempore commodi animi rem?
+                  </p>
+                </div>
+              </Modal.Body>
+            </Modal>
           </div>
           <div className="flex flex-col border-b border-[#333333] lg:border-x lg:px-4">
-            <div className="flex items-center justify-between py-4 lg:h-[112px] lg:py-0">
+            <button
+              onClick={() => setDisplayListings(true)}
+              className="flex items-center justify-between py-4 lg:h-[112px] lg:py-0"
+            >
               <p className="font-Satoshi font-medium lg:text-2xl">Listings</p>
               <AngleDownIcon />
-            </div>
-
-            <div className="hidden pb-4 font-Satoshi text-black">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
+            </button>
+            <Modal
+              show={displayListings}
+              onClose={() => setDisplayListings(false)}
+            >
+              <Modal.Header>Listings</Modal.Header>
+              <Modal.Body>
+                <div>
+                  <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
+              </Modal.Body>
+            </Modal>
           </div>
           <div className="flex flex-col border-b border-[#333333] lg:border-x lg:px-4">
-            <div className="flex items-center justify-between py-4 lg:h-[112px] lg:py-0">
+            <button
+              onClick={() => setDisplayStatus(true)}
+              className="flex items-center justify-between py-4 lg:h-[112px] lg:py-0"
+            >
               <p className="font-Satoshi font-medium lg:text-2xl">Status</p>
               <AngleDownIcon />
-            </div>
-
-            <div className="hidden pb-4 font-Satoshi text-black">
-              GI: Available
-            </div>
+            </button>
+            <Modal show={displayStatus} onClose={() => setDisplayStatus(false)}>
+              <Modal.Header>Status</Modal.Header>
+              <Modal.Body>
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    Available
+                  </p>
+                </div>
+              </Modal.Body>
+            </Modal>
           </div>
         </div>
       </div>
