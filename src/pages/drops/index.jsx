@@ -29,7 +29,7 @@ const UpcomingDrops = () => {
           <p className="font-Satoshi font-normal lg:text-2xl">
             Turn on notifications so that no drops will miss you.
           </p>
-          <button className="my-auto h-[50px] w-[200px] rounded-lg border border-black font-Satoshi font-medium duration-300 hover:bg-black hover:text-white lg:h-[60px] lg:w-[250px] lg:text-2xl">
+          <button className="my-auto h-12 w-[175px] rounded-lg border border-black font-Satoshi font-medium duration-300 hover:bg-black hover:text-white lg:h-14 lg:w-[200px] lg:text-xl">
             Notify me
           </button>
         </div>

@@ -63,11 +63,11 @@ const UpcomingAuctions = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
-          className="h-[300px] md:h-[525px]"
+          className="h-[325px] md:h-[525px]"
         >
           <div className="flex h-full flex-col justify-between bg-gradient-to-r from-[#00000000] via-[#00000033] to-[#00000085] p-4 md:flex-row md:items-end md:p-8">
             <div className="flex gap-4">
-              <div className="flex flex-col items-end gap-4">
+              <div className="flex min-w-[50px] flex-col items-end gap-4 lg:min-w-[72.5px]">
                 <WhiteCircleSvg />
                 <span className="font-Bellefair text-5xl text-[#E1E1E1] md:text-7xl">
                   0{upcomingAuctions[index].id.slice(1)}
@@ -89,13 +89,13 @@ const UpcomingAuctions = () => {
             <div className="flex items-center justify-end gap-4 text-white">
               <button
                 onClick={() => navigate("/auctions")}
-                className="border-b border-white font-Satoshi text-sm md:text-lg"
+                className="border-b border-white font-Satoshi md:text-lg"
               >
                 See more
               </button>
               <button
                 onClick={() => navigate("/drops")}
-                className="rounded-lg border border-white px-4 py-2 font-Satoshi text-sm duration-300 hover:bg-white hover:text-black md:text-lg"
+                className="rounded-lg border border-white px-4 py-2 font-Satoshi duration-300 hover:bg-white hover:text-black md:text-lg"
               >
                 Set a reminder
               </button>

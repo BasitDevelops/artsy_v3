@@ -28,7 +28,7 @@ const TopBidCard = ({ image, name, creator, date, currentBid, highestBid }) => {
             {currentBid}
           </span>
         </div>
-        <button className="h-[40px] w-[135px] rounded-sm bg-[#272727] font-Satoshi font-medium text-white lg:h-[50px] lg:w-[175px] lg:rounded-sm lg:text-xl">
+        <button className="h-12 w-[140px] rounded-sm bg-[#272727] font-Satoshi font-medium text-white lg:w-[180px] lg:rounded-sm">
           Place bid
         </button>
       </div>

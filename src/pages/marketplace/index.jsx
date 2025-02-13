@@ -138,7 +138,7 @@ const MarketPlace = () => {
                   setLoading(false);
                 }, 1000);
               }}
-              className="mx-auto h-[50px] w-[150px] rounded-lg border border-black font-Satoshi text-lg text-black duration-300 hover:bg-black hover:text-white lg:mt-16 lg:h-[60px] lg:w-[200px] lg:text-2xl lg:font-medium"
+              className="mx-auto h-12 w-[180px] rounded-lg border border-black font-Satoshi text-black duration-300 hover:bg-black hover:text-white lg:mt-16 lg:h-14 lg:text-xl lg:font-medium"
             >
               {!loading ? (
                 "See more"
@@ -154,7 +154,7 @@ const MarketPlace = () => {
             </button>
           ))}
         {!button && (
-          <p className="mx-auto h-[50px] text-center font-Satoshi lg:mt-16 lg:h-[60px] lg:text-xl lg:font-medium">
+          <p className="mx-auto text-center font-Satoshi lg:mt-16 lg:text-xl">
             "That's all for now, more artworks coming soon..."
           </p>
         )}

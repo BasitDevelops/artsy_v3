@@ -41,7 +41,7 @@ const ShoppingCart = ({ tab, setTab }) => {
             <div className="flex h-full flex-col items-center gap-4 lg:w-1/2">
               <button
                 onClick={() => setTab("shipping-details")}
-                className="h-[50px] w-full rounded-md bg-[#272727] font-Satoshi font-medium text-white lg:h-[65px] lg:text-xl"
+                className="h-12 w-full rounded-md bg-[#272727] font-Satoshi font-medium text-white lg:h-14 lg:text-xl"
               >
                 Proceed to checkout
               </button>

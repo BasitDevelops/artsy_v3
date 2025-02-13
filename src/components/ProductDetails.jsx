@@ -117,7 +117,7 @@ const ProductDetails = () => {
             <button
               onClick={handleAddToCart}
               disabled={loading}
-              className="mb-4 flex h-[50px] w-[150px] items-center justify-center gap-2 rounded-sm bg-[#272727] text-[#FFFFFF] duration-300 hover:gap-4 lg:mb-0 lg:h-[60px] lg:w-[200px] lg:text-xl"
+              className="mb-4 flex h-12 items-center justify-center gap-2 rounded-sm bg-[#272727] text-[#FFFFFF] duration-300 hover:gap-4 lg:mb-0 lg:w-1/2 lg:h-14 lg:text-xl"
             >
               {!loading ? (
                 <>

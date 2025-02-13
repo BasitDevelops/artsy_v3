@@ -34,13 +34,13 @@ const PaymentDetails = ({ setTab }) => {
       </div>
       <div className="flex gap-8">
         <div className="flex w-full flex-col gap-8 rounded-lg border-[#00000040] lg:w-1/2 lg:border lg:p-4">
-          <div className="flex gap-4">
+          <div className="flex items-center gap-4">
             <input type="radio" />
             <div className="flex w-full items-center justify-between">
               <h3 className="font-Satoshi font-medium text-[#292929] lg:text-xl">
                 Select your wallet
               </h3>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center lg:gap-2">
                 <button>
                   <img src={metamask} />
                 </button>
@@ -67,7 +67,7 @@ const PaymentDetails = ({ setTab }) => {
             </p>
             <input
               type="text"
-              className="mt-2 h-10 w-full rounded-lg border-[0.5px] border-[#747474] bg-[#F2F2F2] px-4 font-Satoshi text-[#888888] lg:h-[50px]"
+              className="mt-2 h-12 w-full rounded-lg border-[0.5px] border-[#747474] bg-[#F2F2F2] px-4 font-Satoshi text-[#888888]"
             />
           </div>
           <div>
@@ -76,7 +76,7 @@ const PaymentDetails = ({ setTab }) => {
             </p>
             <input
               type="text"
-              className="mt-2 h-10 w-full rounded-lg border-[0.5px] border-[#747474] bg-[#F2F2F2] px-4 font-Satoshi text-[#888888] lg:h-[50px]"
+              className="mt-2 h-12 w-full rounded-lg border-[0.5px] border-[#747474] bg-[#F2F2F2] px-4 font-Satoshi text-[#888888]"
             />
           </div>
           <div className="flex flex-col gap-8 lg:flex-row">
@@ -86,7 +86,7 @@ const PaymentDetails = ({ setTab }) => {
               </p>
               <input
                 type="text"
-                className="mt-2 h-10 w-full rounded-lg border-[0.5px] border-[#747474] bg-[#F2F2F2] px-4 font-Satoshi text-[#888888] lg:h-[50px]"
+                className="mt-2 h-12 w-full rounded-lg border-[0.5px] border-[#747474] bg-[#F2F2F2] px-4 font-Satoshi text-[#888888]"
               />
             </div>
             <div className="w-full">
@@ -95,7 +95,7 @@ const PaymentDetails = ({ setTab }) => {
               </p>
               <input
                 type="text"
-                className="mt-2 h-10 w-full rounded-lg border-[0.5px] border-[#747474] bg-[#F2F2F2] px-4 font-Satoshi text-[#888888] lg:h-[50px]"
+                className="mt-2 h-12 w-full rounded-lg border-[0.5px] border-[#747474] bg-[#F2F2F2] px-4 font-Satoshi text-[#888888]"
               />
             </div>
           </div>
@@ -144,7 +144,7 @@ const PaymentDetails = ({ setTab }) => {
               navigate("/success");
             }, 2000);
           }}
-          className="mt-8 h-[50px] w-full rounded-md bg-[#272727] font-Satoshi font-medium text-white lg:h-[65px] lg:w-[48.7%] lg:text-xl"
+          className="mt-8 h-12 w-full rounded-md bg-[#272727] font-Satoshi font-medium text-white lg:h-14 lg:w-[48.7%] lg:text-xl"
         >
           {!loading ? (
             "Confirm"
@@ -160,7 +160,7 @@ const PaymentDetails = ({ setTab }) => {
         </button>
         <button
           onClick={() => setTab("shipping-details")}
-          className="font-Satoshi text-base font-medium underline underline-offset-[5px] lg:w-[48.7%] lg:text-xl"
+          className="font-Satoshi font-medium underline underline-offset-[5px] lg:w-[48.7%] lg:text-xl"
         >
           Back
         </button>

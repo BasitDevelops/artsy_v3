@@ -19,14 +19,14 @@ const UpcomingDropCard = ({ image, title, desc, creator, date }) => {
               6hr : 40mins: 15s
             </p>
           </div>
-          <button className="h-[25px] w-[50px] rounded-xl bg-[#4693ED] font-Satoshi text-xs font-medium text-white lg:h-[35px] lg:w-[100px] lg:text-2xl">
+          <button className="h-6 w-[50px] rounded-xl bg-[#4693ED] font-Satoshi font-medium text-white lg:h-9 lg:w-[100px] lg:text-xl">
             Join
           </button>
         </div>
       </div>
 
       <div className="flex flex-col justify-between gap-4 lg:w-1/2 lg:py-8">
-        <span className="flex h-[25px] w-[100px] items-center justify-center rounded-md bg-[#4693ED] font-Inter text-xs font-medium text-[#ffffff] lg:h-[45px] lg:w-[170px] lg:rounded-lg lg:text-lg">
+        <span className="flex h-7 w-[100px] items-center justify-center rounded-md bg-[#4693ED] font-Inter text-xs font-medium text-[#ffffff] lg:h-10 lg:w-[150px] lg:rounded-lg lg:text-lg">
           UPCOMING
         </span>
         <p className="font-Satoshi capitalize lg:text-lg">{date}</p>
