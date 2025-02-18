@@ -7,7 +7,7 @@ export function CartProvider({ children }) {
 
   const addToCart = (item) => {
     const itemAlreadyExistsInCart = cartItems.filter(
-      (cartItem) => cartItem.productDetails[0].id === item.productDetails[0].id
+      (cartItem) => cartItem.productDetails[0].id === item.productDetails[0].id,
     );
 
     if (itemAlreadyExistsInCart.length === 0) {
@@ -22,25 +22,11 @@ export function CartProvider({ children }) {
       return cartItem;
     });
     setCartItems(updatedCartItems);
-
-    // cartItems.map((cartItem) => {
-    //   if (cartItem.productDetails[0].id === item.productDetails[0].id) {
-    //     const updatedCartItems = cartItems.filter(
-    //       (cartItem) =>
-    //         cartItem.productDetails[0].id !== item.productDetails[0].id,
-    //     );
-
-    //     setCartItems([
-    //       ...updatedCartItems,
-    //       { ...item, count: cartItem.count + item.count },
-    //     ]);
-    //   }
-    // });
   };
 
   const removeFromCart = (item) =>
     setCartItems(
-      cartItems.filter((cartItem) => item.id !== cartItem.productDetails[0].id)
+      cartItems.filter((cartItem) => item.id !== cartItem.productDetails[0].id),
     );
 
   const clearCart = () => setCartItems([]);
@@ -49,6 +35,7 @@ export function CartProvider({ children }) {
     <CartContext.Provider
       value={{
         cartItems,
+        setCartItems,
         addToCart,
         removeFromCart,
         clearCart,

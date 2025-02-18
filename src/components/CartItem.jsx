@@ -11,7 +11,7 @@ const CartItem = ({
   price,
   itemCount,
 }) => {
-  const { removeFromCart } = useContext(CartContext);
+  const { cartItems, setCartItems, removeFromCart } = useContext(CartContext);
 
   const [count, setCount] = useState(itemCount);
 
@@ -22,7 +22,18 @@ const CartItem = ({
 
     setCount((prevState) => prevState - 1);
   };
-  const increaseCount = () => setCount((prevState) => prevState + 1);
+
+  const increaseCount = () => {
+    setCount((prevState) => prevState + 1);
+    // const updatedCartItems = cartItems.map((item) => {
+    //   if (item.productDetails[0].id === cartItem.productDetails[0].id) {
+    //     return { ...item, count: cartItem.count + item.count };
+    //   }
+    //   return cartItem;
+    // });
+    // setCartItems(updatedCartItems);
+    // console.log(cartItems);
+  };
 
   return (
     <div className="flex gap-4 border-t-[0.5px] border-[#747474] py-4 lg:py-8">
@@ -51,7 +62,9 @@ const CartItem = ({
           <button onClick={() => removeFromCart(cartItem.productDetails[0])}>
             <CircleXmarkIcon />
           </button>
-          <span className="font-Sora text-lg lg:text-2xl">${price.toFixed(2)}</span>
+          <span className="font-Sora text-lg lg:text-2xl">
+            ${price.toFixed(2)}
+          </span>
         </div>
       </div>
     </div>

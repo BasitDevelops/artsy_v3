@@ -42,6 +42,7 @@ const ProductDetails = () => {
       setLoading((prev) => !prev);
       addToCart({ productDetails, count: count });
       setAlert((prev) => !prev);
+      setCount(1);
     }, 1000);
     setTimeout(() => {
       setAlert((prev) => !prev);
@@ -117,7 +118,7 @@ const ProductDetails = () => {
             <button
               onClick={handleAddToCart}
               disabled={loading}
-              className="mb-4 flex h-12 items-center justify-center gap-2 rounded-sm bg-[#272727] text-[#FFFFFF] duration-300 hover:gap-4 lg:mb-0 lg:w-1/2 lg:h-14 lg:text-xl"
+              className="mb-4 flex h-12 items-center justify-center gap-2 rounded-sm bg-[#272727] text-[#FFFFFF] duration-300 hover:gap-4 lg:mb-0 lg:h-14 lg:w-1/2 lg:text-xl"
             >
               {!loading ? (
                 <>
